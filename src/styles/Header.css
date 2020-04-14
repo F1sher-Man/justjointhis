@@ -6,8 +6,6 @@
 hr {
   color: #e5eaf3;
   padding: 0 !important;
-  /* border: 0;
-  height: 5px; */
 }
 
 a:link,
@@ -22,8 +20,3 @@ svg {
   width: 3rem;
   height: 1.3rem;
 }
-
-/* #menu-item {
-  width: 80%;
-  padding: 10px 15px;
-} */

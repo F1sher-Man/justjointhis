@@ -16,7 +16,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
         spin={props.isSpinnning}
         color={props.isSpinnning ? "red" : "black"}
       />
-      <a href={`/${props.description.toLocaleLowerCase()}`}>
+      <a href={`/${props.description.toLocaleLowerCase().split(" ").join("")}`}>
         {props.description}
       </a>
     </div>
