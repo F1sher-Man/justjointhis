@@ -4,11 +4,10 @@
 }
 
 hr {
-  width: 100%;
-  border: 0.5px solid #e5eaf3;
-}
-hr.bm-item {
-  width: 100%;
+  color: #e5eaf3;
+  padding: 0 !important;
+  /* border: 0;
+  height: 5px; */
 }
 
 a:link,
