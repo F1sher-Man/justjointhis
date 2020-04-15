@@ -1,42 +1,36 @@
 import * as React from "react";
+import { useState } from "react";
 import MenuItem from "./detailed/MenuItem";
 import "../../styles/BurgerMenu.scss";
 import { slide as MenuComponent } from "react-burger-menu";
 import ITEMS_MOBILE from "../../enums/menuitems.const";
+import { ITEMS_DESKTOP } from "../../enums/menuitems.const";
 
 export interface MenuProps {}
 
 const Menu: React.FC<MenuProps> = () => {
+  const [windowSize, setWindowSize] = useState(
+    window.matchMedia("(max-width: 700px)")
+  );
+  function updateView() {
+    setWindowSize(window.matchMedia("(max-width: 700px)"));
+  }
+  windowSize.addListener(updateView);
+  let items = Object.values(ITEMS_DESKTOP);
+  if (windowSize.matches) items = Object.values(ITEMS_MOBILE);
   return (
     <MenuComponent right>
       <h2>Menu</h2>
       <hr />
       <div className="menu-item">
-        <MenuItem
-          icon={ITEMS_MOBILE.MATCHMAKING.icon}
-          description={ITEMS_MOBILE.MATCHMAKING.description}
-        />
-        <MenuItem
-          icon={ITEMS_MOBILE.JOB_OFFERS.icon}
-          description={ITEMS_MOBILE.JOB_OFFERS.description}
-        />
-        <MenuItem
-          icon={ITEMS_MOBILE.BRAND_STORIES.icon}
-          description={ITEMS_MOBILE.BRAND_STORIES.description}
-        />
-        <MenuItem
-          icon={ITEMS_MOBILE.JUST_GEEK_IT.icon}
-          description={ITEMS_MOBILE.JUST_GEEK_IT.description}
-        />
-        <MenuItem
-          icon={ITEMS_MOBILE.LIVE.icon}
-          description={ITEMS_MOBILE.LIVE.description}
-          isSpinnning={true}
-        />
-        <MenuItem
-          icon={ITEMS_MOBILE.HELP.icon}
-          description={ITEMS_MOBILE.HELP.description}
-        />
+        {items.map((item, index) => (
+          <MenuItem
+            key={index}
+            icon={item.icon}
+            description={item.description}
+            isSpinnning={item.isSpinning}
+          />
+        ))}
       </div>
     </MenuComponent>
   );
