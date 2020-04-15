@@ -25,8 +25,8 @@ function App() {
             <Route
               path={ITEMS_MOBILE.JUST_GEEK_IT.route}
               component={() => {
+                window.location.replace(document.referrer);
                 window.open("https://geek.justjoin.it/", "_blank");
-                // window.location.replace("https://geek.justjoin.it/");
                 return <p>Redirecting...</p>;
               }}
             />

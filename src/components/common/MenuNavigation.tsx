@@ -1,6 +1,6 @@
 import * as React from "react";
 import MenuItem from "./detailed/MenuItem";
-import "../../styles/BurgerMenu.css";
+import "../../styles/BurgerMenu.scss";
 import { slide as MenuComponent } from "react-burger-menu";
 import ITEMS_MOBILE from "../../enums/menuitems.const";
 

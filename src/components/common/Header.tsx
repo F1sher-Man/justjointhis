@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../../styles/Header.css";
+import "../../styles/Header.scss";
 
 export interface HeaderProps {}
 
