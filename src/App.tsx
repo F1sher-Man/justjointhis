@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/common/Header";
-import MenuNavigation from "./components/common/MenuNavigation";
-import Raz from "./components/subpages/raz";
-import Sto from "./components/subpages/sto";
+import Header from "./components/common/Header/Header";
+import MenuNavigation from "./components/common/Menu/MenuNavigation";
+import Raz from "./components/main/raz";
+import Sto from "./components/main/sto";
 import ITEMS_MOBILE from "./enums/menuitems.const";
 
 import "./App.css";
