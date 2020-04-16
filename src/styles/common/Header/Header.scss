@@ -3,13 +3,29 @@
   flex-direction: row;
   align-items: baseline;
 }
+.items-wrapper {
+  @extend .item-container;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 69px;
+}
 .nav-items {
   display: flex;
   flex-direction: row;
   &-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 15px;
+    padding: 0 12px;
+  }
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.btn-items {
+  position: absolute;
+  right: 70px;
+  top: 7px;
+  @media only screen and (max-width: 1024px) {
+    display: none;
   }
 }
 
@@ -18,6 +34,11 @@
   color: white !important;
   text-transform: none !important;
   border-radius: 20px !important;
+  margin: 7px !important;
+  &-second {
+    @extend .myButton;
+    background-color: rgb(119, 49, 131) !important;
+  }
 }
 
 .header-sign {

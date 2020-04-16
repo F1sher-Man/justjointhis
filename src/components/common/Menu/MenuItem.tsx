@@ -7,14 +7,17 @@ export interface MenuItemProps {
   icon: IconProp;
   description: string;
   isSpinnning?: boolean;
+  isHeaderItem?: boolean;
   classname?: string;
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
+  let iconClass: string = props.isHeaderItem ? "icon" : "";
+
   return (
     <div className={props.classname}>
       <FontAwesomeIcon
-        className={"icon"}
+        className={iconClass}
         icon={props.icon}
         spin={props.isSpinnning}
         color={props.isSpinnning ? "red" : "black"}

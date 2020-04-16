@@ -23,6 +23,7 @@ const Header: React.FC<HeaderProps> = () => {
               icon={item.icon}
               description={item.description}
               isSpinnning={item.isSpinning}
+              isHeaderItem={true}
             />
           ))}
         </div>
@@ -30,7 +31,7 @@ const Header: React.FC<HeaderProps> = () => {
           <Button variant="contained" className="myButton">
             <b>Post a Job</b>
           </Button>
-          <Button variant="contained" className="myButton">
+          <Button variant="contained" className="myButton-second">
             <b>Sign in ∨</b>
           </Button>
         </div>
