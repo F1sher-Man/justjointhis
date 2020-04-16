@@ -1,0 +1,10 @@
+a {
+  color: rgb(153, 161, 171) !important;
+  padding-left: 15px;
+}
+
+.icon {
+  @media only screen and (max-width: 1170px) {
+    display: none;
+  }
+}

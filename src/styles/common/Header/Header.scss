@@ -1,4 +1,27 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+}
+
+.myButton {
+  background-color: rgb(255, 64, 129) !important;
+  color: white !important;
+  text-transform: none !important;
+  border-radius: 20px !important;
+}
+
 .header-sign {
+  font-size: 1.5rem;
   margin: 0px 10px 10px 25px;
   padding-top: 15px;
 }

@@ -1,0 +1,7 @@
+a {
+  color: #99a1ab !important;
+  padding-left: 15px; }
+
+@media only screen and (max-width: 1170px) {
+  .icon {
+    display: none; } }
