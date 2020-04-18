@@ -19,6 +19,7 @@ const Menu: React.FC<MenuProps> = () => {
           {desktopItems.map((item, index) => (
             <MenuItem
               key={index}
+              route={item.route}
               icon={item.icon}
               description={item.description}
               isSpinnning={item.isSpinning}
@@ -29,6 +30,7 @@ const Menu: React.FC<MenuProps> = () => {
           {mobileItems.map((item, index) => (
             <MenuItem
               key={index}
+              route={item.route}
               icon={item.icon}
               description={item.description}
               isSpinnning={item.isSpinning}

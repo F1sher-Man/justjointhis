@@ -20,6 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
             <MenuItem
               classname={"nav-items-item"}
               key={index}
+              route={item.route}
               icon={item.icon}
               description={item.description}
               isSpinnning={item.isSpinning}

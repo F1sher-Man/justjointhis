@@ -16,7 +16,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 type item = {
   description: string;
   icon: IconProp;
-  route?: string;
+  route: string;
   isSpinning?: boolean;
 };
 type items_enum = {
@@ -31,7 +31,7 @@ export const ITEMS_MOBILE: items_enum = {
   JOB_OFFERS: {
     description: "Job offers",
     icon: faBriefcase,
-    route: "/joboffers",
+    route: "/",
   },
   BRAND_STORIES: {
     description: "Brand Stories",

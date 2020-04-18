@@ -6,6 +6,7 @@ import "../../../styles/common/Menu/MenuItem.scss";
 export interface MenuItemProps {
   icon: IconProp;
   description: string;
+  route: string;
   isSpinnning?: boolean;
   isHeaderItem?: boolean;
   classname?: string;
@@ -22,9 +23,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
         spin={props.isSpinnning}
         color={props.isSpinnning ? "red" : "black"}
       />
-      <a href={`/${props.description.toLocaleLowerCase().split(" ").join("")}`}>
-        {props.description}
-      </a>
+      <a href={props.route}>{props.description}</a>
     </div>
   );
 };
