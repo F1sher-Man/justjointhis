@@ -1,9 +1,16 @@
 import * as React from "react";
+import DropdownLocation from "./DropdownLocation";
+import '../../../styles/main/JobOffers/JobOffers.scss';
 
-export interface JobOffersProps {}
+export interface JobOffersProps { }
 
 const JobOffers: React.FC<JobOffersProps> = () => {
-  return <div>JobOffers</div>;
+ 
+  return <div className="containerssx">
+    <DropdownLocation />
+
+
+  </div >;
 };
 
 export default JobOffers;
