@@ -7,10 +7,51 @@ export interface JobOffersProps { }
 
 const JobOffers: React.FC<JobOffersProps> = () => {
 
-  return <div className="containerssx">
+  return <div className="page-container">
     <div className="topbar">
       <DropdownLocation />
       <Technologies />
+    </div>
+    <div className="content-container">
+      <div className="offers">
+        ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+        ppp<br />
+        pp<br />ppp<br />
+        pp<br />
+      </div>
+      <div className="map">
+        ss
+      </div>
     </div>
 
 

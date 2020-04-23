@@ -1,0 +1,5 @@
+@import "./variables.scss";
+
+.content {
+  height: unquote(" calc(100% - #{$header-height})");
+}

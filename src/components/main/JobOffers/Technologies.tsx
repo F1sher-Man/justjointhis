@@ -9,9 +9,7 @@ export interface TechnologiesProps { }
 const Technologies: React.FC<TechnologiesProps> = () => {
     const [currentTech, setCurrentTech] = useState('all');
     let tech = Object.values(TECH);
-    let renderTech = tech.forEach((item, index) => {
-        // let class = 'round';
-    });
+
     function handleTechChange(tech: string) {
         setCurrentTech(tech);
     }

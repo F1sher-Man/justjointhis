@@ -6,6 +6,7 @@ import MenuNavigation from "./components/common/Menu/MenuNavigation";
 import ITEMS_MOBILE from "./enums/menuitems.const";
 
 import "./App.css";
+import "./styles/MyApp.scss";
 import JobOffers from "./components/main/JobOffers/JobOffers";
 import Matchmaking from "./components/main/Matchmaking/Matchmaking";
 import BrandStories from "./components/main/BrandStories/BrandStories";
@@ -17,7 +18,7 @@ function App() {
     <React.Fragment>
       <MenuNavigation />
       <Header />
-      <div id="content">
+      <div className="content">
         <Router>
           <Switch>
             <Route path={ITEMS_MOBILE.MATCHMAKING.route}>

@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = () => {
   let mobileItems = Object.values(ITEMS_MOBILE);
   mobileItems = mobileItems.filter((item) => item.description !== "Help");
   return (
-    <div>
+    <div className="header-wrapper">
       <div className="item-container">
         <p className="header-sign">
           <b>justjoin.this</b>
