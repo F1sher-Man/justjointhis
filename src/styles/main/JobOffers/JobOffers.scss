@@ -1,37 +1,37 @@
 .dropdown-btn {
-    border-radius: 50px !important;
-    margin-left: 20px; 
-    width: 200px;
+  border-radius: 50px !important;
+  margin-left: 20px;
+  width: 200px;
 }
 .page-container {
-   height: 100%;
-//    margin: 0;
+  height: 100%;
 }
 
 .topbar {
-    display: flex;
-    flex-direction: row;
-    width: 800px;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  @media only screen and (max-width: 1024px) {
+    width: 230px;
+  }
 }
 
-.content-container{
-    display: flex;
-    flex-direction: row;
-    height:90%;
-    // width:100%;
-    // min-height: 100%;
-    // margin: 0;
+.content-container {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  margin-top: 5%;
 }
 
-.offers{
-    width:50%;
-    height: 100%;
-    overflow: auto;
-    background-color: red;
+.offers {
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  background-color: red;
 }
 
-.map{
-    width:50%;
-    height: 100%;
-    background-color: lightgreen;
+.map {
+  width: 50%;
+  height: 100%;
+  background-color: lightgreen;
 }
