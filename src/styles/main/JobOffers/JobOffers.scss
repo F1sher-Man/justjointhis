@@ -21,17 +21,23 @@
   flex-direction: row;
   height: 80%;
   margin-top: 5%;
+  background-color: #f3f6f8;
 }
 
 .offers {
   width: 50%;
   height: 100%;
   overflow: auto;
-  background-color: red;
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .map {
   width: 50%;
   height: 100%;
   background-color: lightgreen;
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 }
