@@ -1,3 +1,5 @@
+$icon-width: 90px;
+
 .offer-container {
   display: flex;
   flex-direction: column;
@@ -14,10 +16,7 @@
 .strip-icon {
   display: flex;
   flex-direction: row;
-  width: 15%;
-  @media only screen and (max-width: 1024px) {
-    display: none;
-  }
+  width: $icon-width;
 }
 
 .strip {
@@ -27,16 +26,20 @@
   border-bottom-left-radius: 10px;
 }
 .company-icon {
-  height: 24px;
-  width: 24px;
-  margin-left: 10px;
+  height: 80%;
+  width: 80%;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 
 .desc-company {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 55%;
+  @media only screen and (max-width: 1024px) {
+    width: auto;
+  }
 }
 
 .desc {
@@ -62,6 +65,10 @@
   justify-content: space-between;
   width: 40%;
   text-align: right;
+  @media only screen and (max-width: 1024px) {
+    text-align: left;
+    width: auto;
+  }
 }
 
 .salary {
@@ -87,5 +94,19 @@
     border-bottom-right-radius: 11px;
     border-top-left-radius: 11px;
     border-top-right-radius: 11px;
+  }
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.mobile-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 2;
+  width: calc(100% - #{$icon-width});
+  @media only screen and (max-width: 1024px) {
+    flex-direction: column;
   }
 }
