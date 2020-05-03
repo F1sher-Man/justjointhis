@@ -22,9 +22,9 @@ const Offer: React.FC<OfferProps> = () => {
           </div>
           <div className="company">
             <FontAwesomeIcon icon={faBuilding} />
-            Tick Company
+            <span>Tick Company</span>
             <FontAwesomeIcon icon={faMapMarkedAlt} />
-            Warsaw
+            <span>Warszawa</span>
           </div>
         </div>
         <div className="salary-stack">

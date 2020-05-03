@@ -1,0 +1,32 @@
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  &-popup {
+    @extend .container;
+    flex-direction: row;
+  }
+  &-offer {
+    @extend .container;
+    flex-direction: column;
+    font-size: 0.7rem;
+  }
+}
+
+.popup-icon {
+  margin-right: 15px;
+  height: 3rem;
+  width: 3rem;
+}
+
+.salary-green {
+  color: green;
+}

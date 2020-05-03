@@ -50,10 +50,14 @@ $icon-width: 90px;
 .company {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   font-size: 0.95rem;
   color: rgb(153, 161, 171);
+  > span {
+    margin-left: 2%;
+    margin-right: 5%;
+  }
   @media only screen and (max-width: 1024px) {
     display: none;
   }
