@@ -1,4 +1,11 @@
-import React from "react";
+import React, {
+  useEffect,
+  useRef,
+  DetailedHTMLProps,
+  HTMLAttributes,
+  MutableRefObject,
+  RefObject,
+} from "react";
 import L from "leaflet";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +16,12 @@ import "../../../styles/main/JobOffers/Map.scss";
 export interface MapComponentProps {}
 
 const MapComponent: React.FC<MapComponentProps> = () => {
+  const mapRef: any = useRef();
+  useEffect(() => {
+    const map = mapRef.getLeafletElement();
+    map.invalidateSize();
+  });
+
   const position: [number, number] = [52.45, 19.0];
   let icon = (icon: string) =>
     L.icon({
@@ -18,7 +31,7 @@ const MapComponent: React.FC<MapComponentProps> = () => {
     });
 
   return (
-    <div className="map-container">
+    <div className="map-container" ref={mapRef}>
       <Map center={position} zoom={7.0}>
         <TileLayer
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
