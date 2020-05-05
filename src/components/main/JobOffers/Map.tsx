@@ -17,10 +17,13 @@ export interface MapComponentProps {}
 
 const MapComponent: React.FC<MapComponentProps> = () => {
   const mapRef: any = useRef();
+
   useEffect(() => {
-    const map = mapRef.getLeafletElement();
-    map.invalidateSize();
-  });
+    setTimeout(() => {
+      console.log(mapRef.current);
+      mapRef.current.leafletElement.invalidateSize();
+    }, 5000);
+  }, []);
 
   const position: [number, number] = [52.45, 19.0];
   let icon = (icon: string) =>
@@ -31,8 +34,8 @@ const MapComponent: React.FC<MapComponentProps> = () => {
     });
 
   return (
-    <div className="map-container" ref={mapRef}>
-      <Map center={position} zoom={7.0}>
+    <div className="map-container">
+      <Map center={position} zoom={7.0} ref={mapRef}>
         <TileLayer
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a> contributors"

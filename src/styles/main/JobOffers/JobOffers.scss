@@ -55,6 +55,7 @@
   justify-content: center;
   background-color: #ff4081;
   transition: background-color 0.5s;
+  z-index: 9999;
   cursor: pointer;
   &:hover {
     background-color: #ff79a7;
