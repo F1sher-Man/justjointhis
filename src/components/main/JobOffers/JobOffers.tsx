@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import { useMediaQuery } from "@material-ui/core";
 import DropdownLocation from "./DropdownLocation";
 import Technologies from "./Technologies";
 import Offers from "./Offers";
@@ -12,14 +13,19 @@ export interface JobOffersProps {}
 
 const JobOffers: React.FC<JobOffersProps> = () => {
   const [isMapDisplay, setIsMapDisplay] = useState(false);
-  const offerStyle = {
-    display: isMapDisplay ? "none" : "block",
-    width: "100%",
-  };
-  const mapStyle = {
-    display: isMapDisplay ? "inline" : "none",
-    width: "100%",
-  };
+  const isMobileView = useMediaQuery("(max-width: 1024px)");
+  let offerStyle = {};
+  let mapStyle = {};
+  if (isMobileView) {
+    offerStyle = {
+      display: isMapDisplay ? "none" : "block",
+      width: "100%",
+    };
+    mapStyle = {
+      display: isMapDisplay ? "inline" : "none",
+      width: "100%",
+    };
+  }
   return (
     <div className="page-container">
       <div className="topbar">
@@ -34,7 +40,7 @@ const JobOffers: React.FC<JobOffersProps> = () => {
           <Offers />
         </div>
         <div className="map" style={mapStyle}>
-          <MapComponent />
+          <MapComponent isRendering={isMapDisplay} />
           <div
             className="mobile-map-btn"
             onClick={() => setIsMapDisplay(false)}

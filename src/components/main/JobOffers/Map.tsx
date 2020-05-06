@@ -1,11 +1,4 @@
-import React, {
-  useEffect,
-  useRef,
-  DetailedHTMLProps,
-  HTMLAttributes,
-  MutableRefObject,
-  RefObject,
-} from "react";
+import React, { useEffect, useRef } from "react";
 import L from "leaflet";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,17 +6,17 @@ import { faJs } from "@fortawesome/free-brands-svg-icons";
 import JobMarker from "./JobMarker";
 import "../../../styles/main/JobOffers/Map.scss";
 
-export interface MapComponentProps {}
+export interface MapComponentProps {
+  isRendering: boolean;
+}
 
-const MapComponent: React.FC<MapComponentProps> = () => {
+const MapComponent: React.FC<MapComponentProps> = ({ isRendering }) => {
   const mapRef: any = useRef();
-
-  useEffect(() => {
+  if (isRendering) {
     setTimeout(() => {
-      console.log(mapRef.current);
       mapRef.current.leafletElement.invalidateSize();
-    }, 5000);
-  }, []);
+    }, 100);
+  }
 
   const position: [number, number] = [52.45, 19.0];
   let icon = (icon: string) =>
