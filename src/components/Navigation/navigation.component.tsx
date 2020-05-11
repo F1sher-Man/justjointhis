@@ -1,12 +1,14 @@
+/* eslint-disable no-empty-pattern */
 import * as React from "react";
-import "../../../styles/common/Header/Header.scss";
-import MenuItem from "../Menu/MenuItem";
+import "./navigation.component.scss";
+import MenuItem from "../HamburgerMenu/HamburgerMenuItem/hamburger-menu-item.component";
 import Button from "@material-ui/core/Button";
-import ITEMS_MOBILE from "../../../enums/menuitems.const";
+import ITEMS_MOBILE from "../../enums/menuitems.const";
+import { ReactElement } from "react";
 
-export interface HeaderProps {}
+export interface NavigationComponentProps {}
 
-const Header: React.FC<HeaderProps> = () => {
+const NavigationComponent = ({}: NavigationComponentProps): ReactElement => {
   let mobileItems = Object.values(ITEMS_MOBILE);
   mobileItems = mobileItems.filter((item) => item.description !== "Help");
   return (
@@ -42,4 +44,4 @@ const Header: React.FC<HeaderProps> = () => {
   );
 };
 
-export default Header;
+export default NavigationComponent;

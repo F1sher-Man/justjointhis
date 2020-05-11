@@ -2,22 +2,26 @@ import * as React from "react";
 import L from "leaflet";
 import { Marker, Popup } from "react-leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import IJobOffer from "../../../interfaces/IJobOffer";
-import "../../../styles/main/JobOffers/Map.scss";
-
+import IJobOffer from "../../../../interfaces/IJobOffer";
+import "../map.component.scss";
+import { ReactElement } from "react";
+// import "../../../../icons";
 export interface JobMarkerProps {
   position: [number, number];
   techIcon: string;
   offer: IJobOffer;
 }
 
-const JobMarker: React.SFC<JobMarkerProps> = (props) => {
-  const { position, techIcon, offer } = props;
+const JobMarker = ({
+  position,
+  techIcon,
+  offer,
+}: JobMarkerProps): ReactElement => {
   const icons = require("@fortawesome/free-brands-svg-icons");
 
   const icon = (icon: string) =>
     L.icon({
-      iconUrl: require(`../../../icons/${icon}.svg`),
+      iconUrl: require(`../../../../icons/${icon}.svg`),
       iconSize: [30, 30],
       popupAnchor: [2, -10],
     });

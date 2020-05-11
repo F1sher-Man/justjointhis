@@ -1,16 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, ReactElement } from "react";
 import L from "leaflet";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs } from "@fortawesome/free-brands-svg-icons";
-import JobMarker from "./JobMarker";
-import "../../../styles/main/JobOffers/Map.scss";
+import JobMarker from "./Marker/map-marker.component";
+import "./map.component.scss";
 
 export interface MapComponentProps {
   isRendering: boolean;
 }
 
-const MapComponent: React.FC<MapComponentProps> = ({ isRendering }) => {
+const MapComponent = ({ isRendering }: MapComponentProps): ReactElement => {
   const mapRef: any = useRef();
   if (isRendering) {
     setTimeout(() => {

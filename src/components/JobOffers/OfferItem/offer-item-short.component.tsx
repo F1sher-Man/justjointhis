@@ -1,12 +1,14 @@
+/* eslint-disable no-empty-pattern */
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreativeCommonsSampling } from "@fortawesome/free-brands-svg-icons";
 import { faBuilding, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-import "../../../styles/main/JobOffers/Offers.scss";
+import { ReactElement } from "react";
+import "./offer-item.component.scss";
 
-export interface OfferProps {}
+export interface OfferItemProps {}
 
-const Offer: React.FC<OfferProps> = () => {
+const OfferItem = ({}: OfferItemProps): ReactElement => {
   return (
     <div className="offer">
       <div className="strip-icon">
@@ -41,4 +43,4 @@ const Offer: React.FC<OfferProps> = () => {
   );
 };
 
-export default Offer;
+export default OfferItem;

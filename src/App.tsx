@@ -1,13 +1,13 @@
 import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/common/Header/Header";
-import MenuNavigation from "./components/common/Menu/MenuNavigation";
+import Navigation from "./components/Navigation/navigation.component";
+import HamburgerMenu from "./components/HamburgerMenu/hamburger-menu.component";
 import ITEMS_MOBILE from "./enums/menuitems.const";
 
 import "./App.css";
 import "./styles/MyApp.scss";
-import JobOffers from "./components/main/JobOffers/JobOffers";
+import JobOffers from "./components/JobOffers/job-offers.component";
 import Matchmaking from "./components/main/Matchmaking/Matchmaking";
 import BrandStories from "./components/main/BrandStories/BrandStories";
 import Live from "./components/main/Live/Live";
@@ -16,8 +16,8 @@ function App() {
   console.log(ITEMS_MOBILE.JOB_OFFERS.route);
   return (
     <React.Fragment>
-      <MenuNavigation />
-      <Header />
+      <HamburgerMenu />
+      <Navigation />
       <div className="content">
         <Router>
           <Switch>
