@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useState, ReactElement } from "react";
 import { useMediaQuery } from "@material-ui/core";
-import DropdownLocation from "./Navigation/droropdown-location.component";
+import DropdownComponent from "./Navigation/dropdown.component";
 import Technologies from "./Navigation/technologies.component";
 import OfferItem from "./OfferItem/offer-item-short.component";
 import MapComponent from "./Map/map.component";
@@ -31,8 +31,19 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
   return (
     <div className="page-container">
       <div className="topbar">
-        <DropdownLocation />
-        <Technologies />
+        <DropdownComponent
+          defaultItem="Lokalizacja"
+          items={["Trójmiasto", "Warszawa", "Wrocław"]}
+        />
+        <div className="tech-mobile">
+          <DropdownComponent
+            defaultItem="Technologia"
+            items={["Javascript", "HTML5", "CSS3", "Python"]}
+          />
+        </div>
+        <div className="tech-fullsize">
+          <Technologies />
+        </div>
       </div>
       <div className="content-container">
         <div className="offers" style={offerStyle}>

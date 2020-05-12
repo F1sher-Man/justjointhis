@@ -1,9 +1,10 @@
 /* eslint-disable no-empty-pattern */
 import * as React from "react";
-import "./technologies.component.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TECH } from "../../../enums/tech.const";
 import { useState, ReactElement } from "react";
+
+import "./navigation.shared.scss";
 
 export interface TechnologiesProps {}
 
