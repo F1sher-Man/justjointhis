@@ -15,8 +15,12 @@ export interface JobOffersProps {}
 
 const JobOffers = ({}: JobOffersProps): ReactElement => {
   const [isMapDisplay, setIsMapDisplay] = useState(false);
+  const [isShowingDetailedOffer, setIsShowingDetailedOffer] = useState(false);
   const isMobileView = useMediaQuery("(max-width: 1024px)");
-  let offerStyle = {};
+  let offerStyle = {
+    display: isShowingDetailedOffer ? "none" : "block",
+    width: "none",
+  };
   let mapStyle = {};
   if (isMobileView) {
     offerStyle = {
@@ -28,6 +32,10 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
       width: "100%",
     };
   }
+  const testFunc = (): void => {
+    console.log("zadzialalo morrd0");
+    setIsShowingDetailedOffer(true);
+  };
   return (
     <div className="page-container">
       <div className="topbar">
@@ -50,18 +58,26 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
           <div className="mobile-map-btn" onClick={() => setIsMapDisplay(true)}>
             <FontAwesomeIcon icon={faMap} color="white" size="2x" />
           </div>
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
-          <OfferItem />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={testFunc} />
+        </div>
+        <div
+          className="offers"
+          style={{ display: isShowingDetailedOffer ? "block" : "none" }}
+        >
+          <div onClick={(): void => setIsShowingDetailedOffer(false)}>
+            {`<-- Powrót`}
+          </div>
         </div>
         <div className="map" style={mapStyle}>
           <MapComponent isRendering={isMapDisplay} />

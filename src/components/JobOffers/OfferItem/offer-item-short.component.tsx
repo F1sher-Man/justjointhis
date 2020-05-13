@@ -6,11 +6,13 @@ import { faBuilding, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { ReactElement } from "react";
 import "./offer-item.component.scss";
 
-export interface OfferItemProps {}
+export interface OfferItemProps {
+  myOnClick(): void;
+}
 
-const OfferItem = ({}: OfferItemProps): ReactElement => {
+const OfferItem = ({ myOnClick }: OfferItemProps): ReactElement => {
   return (
-    <div className="offer">
+    <div className="offer" onClick={(): void => myOnClick()}>
       <div className="strip-icon">
         <div className="strip" />
         <div className="company-icon">
