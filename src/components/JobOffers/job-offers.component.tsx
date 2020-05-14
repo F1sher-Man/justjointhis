@@ -8,6 +8,7 @@ import OfferItem from "./OfferItem/offer-item-short.component";
 import MapComponent from "./Map/map.component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMap, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import OfferDetailed from "./OfferItem/offer-item-detailed.component";
 
 import "./job-offers.component.scss";
 
@@ -15,7 +16,7 @@ export interface JobOffersProps {}
 
 const JobOffers = ({}: JobOffersProps): ReactElement => {
   const [isMapDisplay, setIsMapDisplay] = useState(false);
-  const [isShowingDetailedOffer, setIsShowingDetailedOffer] = useState(false);
+  const [isShowingDetailedOffer, setIsShowingDetailedOffer] = useState(true);
   const isMobileView = useMediaQuery("(max-width: 1024px)");
   let offerStyle = {
     display: isShowingDetailedOffer ? "none" : "block",
@@ -32,9 +33,8 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
       width: "100%",
     };
   }
-  const testFunc = (): void => {
-    console.log("zadzialalo morrd0");
-    setIsShowingDetailedOffer(true);
+  const switchContext = (): void => {
+    setIsShowingDetailedOffer(!isShowingDetailedOffer);
   };
   return (
     <div className="page-container">
@@ -58,26 +58,29 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
           <div className="mobile-map-btn" onClick={() => setIsMapDisplay(true)}>
             <FontAwesomeIcon icon={faMap} color="white" size="2x" />
           </div>
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
-          <OfferItem myOnClick={testFunc} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
+          <OfferItem myOnClick={switchContext} />
         </div>
         <div
           className="offers"
           style={{ display: isShowingDetailedOffer ? "block" : "none" }}
         >
-          <div onClick={(): void => setIsShowingDetailedOffer(false)}>
+          <OfferDetailed goBack={switchContext} />
+          {/* <div onClick={(): void => setIsShowingDetailedOffer(false)}>
             {`<-- Powrót`}
-          </div>
+          </div> */}
         </div>
         <div className="map" style={mapStyle}>
           <MapComponent isRendering={isMapDisplay} />

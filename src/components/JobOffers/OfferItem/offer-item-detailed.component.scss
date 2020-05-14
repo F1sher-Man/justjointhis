@@ -1,0 +1,57 @@
+.offer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &-item {
+    width: 95%;
+    min-height: 200px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background-image: url("https://justjoin.it/static/media/header_background.0ef18c97.png"),
+      linear-gradient(30deg, rgb(72, 67, 122), rgb(47, 36, 189));
+    &-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: left;
+      &-details {
+        @extend .offer-container-item-top;
+        flex-direction: column;
+        align-items: left;
+        margin-left: 20px;
+        justify-content: center;
+        color: white;
+        > span:nth-child(2) {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.go-back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgba($color: #8a7b7b, $alpha: 0.3);
+  transition: background-color 0.5s;
+  fill: white;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($color: #d1c3c3, $alpha: 0.3);
+  }
+}
+
+.brand-icon {
+  padding-left: 20px;
+  color: white;
+}
