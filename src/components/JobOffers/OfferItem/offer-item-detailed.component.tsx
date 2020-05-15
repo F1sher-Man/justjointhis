@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreativeCommonsSampling } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
 import "./offer-item-detailed.component.scss";
 
@@ -30,7 +31,12 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
             <span>{shortDesc}</span>
             <span>{address}</span>
           </div>
+          <div className="apply-btn">
+            <FontAwesomeIcon icon={faEnvelopeOpenText} size="2x" />
+            <span>Aplikuj!</span>
+          </div>
         </div>
+        <div className="offer-container-item">HALO HALO</div>
       </div>
     </div>
   );
