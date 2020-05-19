@@ -16,6 +16,16 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
   const shortDesc = "Senior Javascript developer";
   const address = "Jana Pawła II, 10, Wrocław";
 
+  type stackType = {
+    desc: String;
+    level: Number;
+  };
+  const techStack: Array<stackType> = [
+    { desc: "JS", level: 4 },
+    { desc: "HTML", level: 4 },
+    { desc: "CSS", level: 2 },
+  ];
+
   return (
     <div className="offer-container">
       <div className="offer-container-item">
@@ -36,7 +46,26 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
             <span>Aplikuj!</span>
           </div>
         </div>
-        <div className="offer-container-item">HALO HALO</div>
+        <div className="offer-container-item-stack">
+          <p>Tech Stack</p>
+          <hr />
+          <div className="techs">
+            <div>
+              <p>React</p>
+              {techStack.map((element) => {
+                return (
+                  <div>
+                    <p>{element.desc}</p>
+                    {for (let i = 0; i < 9; i++) {
+   console.log(i);}
+                    }}
+                    <div className="tech-dot" />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
