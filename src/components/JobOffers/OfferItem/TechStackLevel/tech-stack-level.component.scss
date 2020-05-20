@@ -1,0 +1,25 @@
+.tech-stack-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 10px;
+  justify-content: center;
+  > p,
+  div {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+.dots-container {
+  display: flex;
+  flex-direction: row;
+}
+.tech-dot {
+  display: flex;
+  flex-direction: row;
+  border-radius: 50%;
+  margin-right: 5px;
+  height: 10px;
+  width: 10px;
+}
