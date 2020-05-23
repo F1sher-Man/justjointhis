@@ -46,10 +46,12 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
             <span>{shortDesc}</span>
             <span>{address}</span>
           </div>
-          <div className="apply-btn">
-            <FontAwesomeIcon icon={faEnvelopeOpenText} size="2x" />
-            <span>Aplikuj!</span>
-          </div>
+          <a href="#form" className="apply-btn">
+            <div className="apply-btn">
+              <FontAwesomeIcon icon={faEnvelopeOpenText} size="2x" />
+              <span>Aplikuj!</span>
+            </div>
+          </a>
         </div>
         <div className="offer-container-item-stack">
           <p>Tech Stack</p>
@@ -101,22 +103,23 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
         <div className="offer-container-item-stack">
           <p>Apply for a job</p>
           <hr />
-          <form noValidate autoComplete="off" className="apply-form">
-            <div className="apply-form-textfields">
-              <TextField
-                style={{ backgroundColor: "white" }}
-                id="outlined-basic"
-                label="Imię i nazwisko"
-                variant="outlined"
-              />
-              <TextField
-                style={{ backgroundColor: "white" }}
-                id="outlined-basic"
-                label="E-mail"
-                variant="outlined"
-              />
-            </div>
-            <div>
+          <form id="form" noValidate autoComplete="off" className="apply-form">
+            <TextField
+              style={{ backgroundColor: "white" }}
+              id="outlined-basic"
+              label="Imię i nazwisko"
+              variant="outlined"
+              className="apply-form-item"
+            />
+            <TextField
+              style={{ backgroundColor: "white" }}
+              id="outlined-basic"
+              label="E-mail"
+              variant="outlined"
+              className="apply-form-item"
+            />
+
+            <div className="apply-form-item">
               <input
                 accept="image/*"
                 id="raised-button-file"
@@ -130,14 +133,19 @@ const OfferDetailed = ({ goBack }: OfferDetailedProps): ReactElement => {
                   color="default"
                   component="span"
                   startIcon={<CloudUploadIcon />}
+                  className="apply-form-btn"
                 >
                   <b>CV</b>
                 </Button>
               </label>
-              <p>CV : brak pliku</p>
+              <span>CV : brak pliku</span>
             </div>
-            <div>
-              <Button variant="contained" color="primary">
+            <div className="apply-form-item">
+              <Button
+                variant="contained"
+                color="primary"
+                className="apply-form-btn"
+              >
                 <b>Aplikuj</b>
               </Button>
             </div>
