@@ -11,18 +11,18 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 import "../navigation.component.scss";
 
-export interface LoginProps {
+export interface RegisterProps {
   isOpen: boolean;
   changeIsOpen(): void;
   switchDialogs(): void;
 }
 
-const Login = ({
+const Register = ({
   isOpen,
   changeIsOpen,
   switchDialogs,
-}: LoginProps): ReactElement => {
-  const [rememberLogin, setRememberLogin] = useState(false);
+}: RegisterProps): ReactElement => {
+  const [termsAccept, setTermsAccept] = useState(false);
   const handleClickOpen = (): void => {
     changeIsOpen();
   };
@@ -34,20 +34,20 @@ const Login = ({
     <React.Fragment>
       <Button
         variant="contained"
-        className="myButton"
+        className="myButton-second"
         onClick={handleClickOpen}
       >
-        <b>Log in</b>
+        <b>Sign in</b>
       </Button>
       <Dialog
         open={isOpen}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Login</DialogTitle>
+        <DialogTitle id="form-dialog-title">Register</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Please fill in e-mail address and Password to log in the website!
+            Fill the form to create an account.
           </DialogContentText>
           <TextField
             autoFocus
@@ -64,22 +64,29 @@ const Login = ({
             type="Password"
             fullWidth
           />
+          <TextField
+            margin="dense"
+            id="password-repeat"
+            label="Repeat password"
+            type="Password"
+            fullWidth
+          />
           <FormControlLabel
             control={
               <Checkbox
-                checked={rememberLogin}
+                checked={termsAccept}
                 onChange={() => {
-                  setRememberLogin(!rememberLogin);
+                  setTermsAccept(!termsAccept);
                 }}
                 inputProps={{ "aria-label": "primary checkbox" }}
               />
             }
-            label="Stay logged in?"
+            label="Accept the terms&conditions"
           />
           <p>
-            You don't have an account?
+            Already have an account?
             <span className="click-link" onClick={switchDialogs}>
-              Click here!
+              Click here to log in!
             </span>
           </p>
         </DialogContent>
@@ -93,4 +100,4 @@ const Login = ({
   );
 };
 
-export default Login;
+export default Register;

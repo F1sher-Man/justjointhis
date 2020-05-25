@@ -11,6 +11,7 @@ const drawCircles = (level: number, filled?: boolean): any => {
   for (let k = 0; k < level; k++) {
     circles.push(
       <div
+        key={k}
         className="tech-dot"
         style={{ backgroundColor: filled ? "#ff4081" : "#bfc5d2" }}
       />

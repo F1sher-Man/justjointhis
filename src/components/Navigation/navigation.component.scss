@@ -70,3 +70,12 @@ svg {
   width: 3rem;
   height: 1.3rem;
 }
+
+.click-link {
+  cursor: pointer;
+  color: grey;
+  padding-left: 2px;
+  &:hover {
+    text-decoration: underline;
+  }
+}

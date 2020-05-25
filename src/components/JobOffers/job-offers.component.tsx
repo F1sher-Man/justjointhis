@@ -16,16 +16,24 @@ export interface JobOffersProps {}
 
 const JobOffers = ({}: JobOffersProps): ReactElement => {
   const [isMapDisplay, setIsMapDisplay] = useState(false);
-  const [isShowingDetailedOffer, setIsShowingDetailedOffer] = useState(true);
+  const [isShowingDetailedOffer, setIsShowingDetailedOffer] = useState(false);
   const isMobileView = useMediaQuery("(max-width: 1024px)");
   let offerStyle = {
     display: isShowingDetailedOffer ? "none" : "block",
-    width: "none",
+    width: "55%",
+  };
+  let detailedOfferStyle = {
+    display: isShowingDetailedOffer ? "block" : "none",
+    width: "55%",
   };
   let mapStyle = {};
   if (isMobileView) {
     offerStyle = {
-      display: isMapDisplay ? "none" : "block",
+      display: isMapDisplay || isShowingDetailedOffer ? "none" : "block",
+      width: "100%",
+    };
+    detailedOfferStyle = {
+      display: isMapDisplay || !isShowingDetailedOffer ? "none" : "block",
       width: "100%",
     };
     mapStyle = {
@@ -75,12 +83,15 @@ const JobOffers = ({}: JobOffersProps): ReactElement => {
         </div>
         <div
           className="offers"
-          style={{ display: isShowingDetailedOffer ? "block" : "none" }}
+          style={detailedOfferStyle}
+          // style={{
+          //   display: isShowingDetailedOffer ? "block" : "none",
+          // }}
         >
+          <div className="mobile-map-btn" onClick={() => setIsMapDisplay(true)}>
+            <FontAwesomeIcon icon={faMap} color="white" size="2x" />
+          </div>
           <OfferDetailed goBack={switchContext} />
-          {/* <div onClick={(): void => setIsShowingDetailedOffer(false)}>
-            {`<-- Powrót`}
-          </div> */}
         </div>
         <div className="map" style={mapStyle}>
           <MapComponent isRendering={isMapDisplay} />

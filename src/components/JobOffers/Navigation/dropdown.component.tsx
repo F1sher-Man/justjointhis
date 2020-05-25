@@ -34,9 +34,9 @@ const DropdownComponent = ({
 
         {/* ponizej margin na zero bo w innym wypadku bootstrap rzuca bledy do konsoli o cos? */}
         <Dropdown.Menu style={{ margin: "0px" }}>
-          {items.map((item) => {
+          {items.map((item, index) => {
             return (
-              <Dropdown.Item onClick={() => handleItemChange(item)}>
+              <Dropdown.Item key={index} onClick={() => handleItemChange(item)}>
                 {item}
               </Dropdown.Item>
             );
