@@ -4,11 +4,16 @@ import "./navigation.component.scss";
 import MenuItem from "../HamburgerMenu/HamburgerMenuItem/hamburger-menu-item.component";
 import Button from "@material-ui/core/Button";
 import ITEMS_MOBILE from "../../enums/menuitems.const";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import Login from "./Account/login.component";
 
 export interface NavigationComponentProps {}
 
 const NavigationComponent = ({}: NavigationComponentProps): ReactElement => {
+  const [openLogin, setOpenLogin] = useState(false);
+  const changeOpenLoginDialog = (): void => {
+    setOpenLogin(!openLogin);
+  };
   let mobileItems = Object.values(ITEMS_MOBILE);
   mobileItems = mobileItems.filter((item) => item.description !== "Help");
   return (
@@ -31,11 +36,9 @@ const NavigationComponent = ({}: NavigationComponentProps): ReactElement => {
           ))}
         </div>
         <div className="btn-items">
-          <Button variant="contained" className="myButton">
-            <b>Post a Job</b>
-          </Button>
+          <Login isOpen={openLogin} changeIsOpen={changeOpenLoginDialog} />
           <Button variant="contained" className="myButton-second">
-            <b>Sign in ∨</b>
+            <b>Sign in</b>
           </Button>
         </div>
       </div>
